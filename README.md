@@ -18,72 +18,46 @@ Built with **FastAPI**, **Supabase (PostgreSQL)**, **Vite React (TypeScript)**, 
 
 ---
 
-## ⚡ Quick Start & Setup
+## ⚡ Quick Start
 
 ### Prerequisites
-- **Python 3.11+**
-- **Node.js 18+** & `npm`
-- **Supabase** account & project
+- Python 3.11+
+- Node.js 18+ & npm
+- Supabase account
 
 ---
 
-### Step 1: Environment Setup
-
-The project uses an existing Supabase project. Create `.env` files with these credentials:
-
-**Backend (`backend/.env`):**
-```bash
-SUPABASE_URL=https://ftnctwanijegzajglkum.supabase.co
-SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0bmN0d2FuaWplZ3phamdsa3VtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwNzI3OTUsImV4cCI6MjEwNzY0ODc5NX0.8smZhdTytyyamgOw_YjZ6BkRnY81Rw6xU6KW0sJAvRs
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
-JWT_SECRET=change-me-to-a-long-random-string
-```
-
-**Frontend (`frontend/.env`):**
-```bash
-VITE_API_URL=http://localhost:8000
-```
-
----
-
-### Step 2: Backend Setup
+### 1. Backend Setup
 
 ```bash
 cd backend
 
-# Create and activate virtual environment
+# Create virtual environment
 python -m venv venv
 
-# Windows (PowerShell)
+# Activate (Windows)
 .\venv\Scripts\Activate.ps1
-# macOS / Linux
+# Activate (Mac/Linux)
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Create .env file in backend/ directory
-# Copy the credentials from Step 1 into backend/.env
-# You can create the file manually or use:
-echo "SUPABASE_URL=https://ftnctwanijegzajglkum.supabase.co" > .env
-echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0bmN0d2FuaWplZ3phamdsa3VtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwNzI3OTUsImV4cCI6MjEwNzY0ODc5NX0.8smZhdTytyyamgOw_YjZ6BkRnY81Rw6xU6KW0sJAvRs" >> .env
-echo "SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here" >> .env
-echo "JWT_SECRET=change-me-to-a-long-random-string" >> .env
+# Create .env file with your Supabase credentials
+# Copy from backend/.env.example and fill in your values
 
-# Seed database with movies, shows, and test users
+# Seed database
 python seed.py
 
-# Start the backend server
+# Start server
 uvicorn app.main:app --reload --port 8000
 ```
 
-Backend API will be running at `http://localhost:8000` (interactive docs at `http://localhost:8000/docs`).
+Backend runs at `http://localhost:8000`
 
 ---
 
-### Step 3: Frontend Setup
-
-Open a new terminal:
+### 2. Frontend Setup
 
 ```bash
 cd frontend
@@ -91,36 +65,25 @@ cd frontend
 # Install dependencies
 npm install
 
-# Create .env file in frontend/ directory
-# Copy the backend URL from Step 1 into frontend/.env
-# You can create the file manually or use:
+# Create .env file
 echo "VITE_API_URL=http://localhost:8000" > .env
 
-# Start Vite development server
+# Start dev server
 npm run dev
 ```
 
-Frontend will be running at `http://localhost:5173`.
+Frontend runs at `http://localhost:5173`
 
 ---
 
-### Step 4: Run Tests
+## 🔑 Login Credentials
 
-```bash
-cd backend
-pytest tests/test_api.py -v
-```
-
----
-
-## 🔑 Test Credentials
-
-The `seed.py` script creates these test accounts:
+Use these accounts to test the application:
 
 | Role | Email | Password | Access |
 | :--- | :--- | :--- | :--- |
-| **Admin** | `admin@test.com` | `Admin1234` | Full access to admin panel |
-| **Customer** | `user@test.com` | `User1234` | Book seats, view bookings |
+| **Admin** | `adsulpratik9@gmail.com` | `@Pratik20-04` | Full admin panel access |
+| **User** | `pratikadsul.career@gmail.com` | `@Pratik2004` | Book seats, view bookings |
 
 ---
 
