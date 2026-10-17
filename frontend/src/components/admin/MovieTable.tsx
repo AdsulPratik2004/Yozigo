@@ -155,7 +155,7 @@ export default function MovieTable({
             <table className="w-full text-left text-sm min-w-[650px]">
               <thead className="border-b border-line bg-white/50 text-xs font-bold uppercase tracking-wider text-muted">
                 <tr>
-                  <th className="px-6 py-3.5">Film</th>
+                  <th className="px-6 py-3.5 max-w-[300px]">Film</th>
                   <th className="px-4 py-3.5">Language</th>
                   <th className="px-4 py-3.5">Duration</th>
                   <th className="px-4 py-3.5">Rating</th>
@@ -175,7 +175,7 @@ export default function MovieTable({
                       }`}
                     >
                       {/* Title & Poster Thumbnail */}
-                      <td className="px-6 py-4 min-w-0">
+                      <td className="px-6 py-4 min-w-0 max-w-[300px]">
                         <div className="flex items-center gap-3 min-w-0">
                           <div className="flex h-12 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white border border-line text-sm">
                             {m.poster_url ? (
