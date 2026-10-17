@@ -218,23 +218,23 @@ export default function BookingConfirmation() {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {isUpcoming && (
             <Button
               variant="danger"
               onClick={() => setCancelModalOpen(true)}
               disabled={cancelMutation.isPending}
-              className="w-full py-3"
+              className="w-full py-3 sm:col-span-2"
             >
               Cancel Booking
             </Button>
           )}
-          <Link to="/" className="flex-1">
+          <Link to="/" className="w-full">
             <Button variant="outline" className="w-full py-3">
               ← Browse Movies
             </Button>
           </Link>
-          <Link to="/my-bookings" className="flex-1">
+          <Link to="/my-bookings" className="w-full">
             <Button variant="primary" className="w-full py-3">
               View My Bookings →
             </Button>
